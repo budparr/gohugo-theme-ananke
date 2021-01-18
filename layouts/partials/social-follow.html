@@ -72,9 +72,16 @@
   {{- partial "new-window-icon.html" . -}}
 </a>
 {{ end }}
+{{ with .Param "strava" }}
+<a href="{{ . }}" target="_blank" class="link-transition strava link dib z-999 pt3 pt0-l mr1" title="Strava link" rel="noopener" aria-label="follow on Strava——Opens in a new window">
+  {{ partial "svg/strava.svg" (dict "size" $icon_size) }}
+  {{- partial "new-window-icon.html" . -}}
+</a>
+{{ end }}
 {{ with .Param "rss" }}
 <a href="{{ . }}" target="_blank" class="link-transition rss link dib z-999 pt3 pt0-l mr1" title="RSS link" rel="noopener" aria-label="RSS——Opens in a new window">
   {{ partial "svg/rss.svg" (dict "size" $icon_size) }}
   {{- partial "new-window-icon.html" . -}}
 </a>
 {{ end }}
+
